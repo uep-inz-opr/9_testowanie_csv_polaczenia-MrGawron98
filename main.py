@@ -10,13 +10,7 @@ def main():
                 line_count += 1
             else:
                 numbers.append(row[0])
-    numbers_set = set(numbers)
-    result = []
-    for number in numbers_set:
-        result.append((int(number), numbers.count(number)))
-    result = sorted(result, key = lambda x: -x[1])
-    max = result[0]
-    print(max)
+    print(sorted([(int(number), numbers.count(number)) for number in set(numbers)], key = lambda x: -x[1])[0])
 
 if __name__ == "__main__":
     main()
