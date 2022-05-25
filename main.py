@@ -13,7 +13,7 @@ def main():
     numbers_set = set(numbers)
     result = []
     for number in numbers_set:
-        result.append((number, numbers.count(number)))
+        result.append((int(number), numbers.count(number)))
     result = sorted(result, key = lambda x: -x[1])
     max = result[0]
     print(max)
